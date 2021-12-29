@@ -8,7 +8,7 @@ if($_POST){
     if ((!$value) or (empty($value))){
 
     }else{
-        $query = $db->prepare("SELECT * FROM results WHERE description  LIKE '%$value%' LIMIT 5 ");//the results you want to view the most
+        $query = $db->prepare("SELECT * FROM results WHERE description  LIKE '%$value%' ORDER BY description LIMIT 5 ");//the results you want to view the most
         $query->execute();
         $count = $query->rowCount();
         if ($count>0){
