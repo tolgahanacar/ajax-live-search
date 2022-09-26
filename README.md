@@ -1,10 +1,8 @@
-# Ajax-Live-Search
-PHP &amp; Ajax Live Search<br>
-
-<b>Setup</b>
-<ul>
-<li>Create Database -> livesearch</li>
-<li>import-> results.sql</li>
-<li>Run-> Run</li>
-</ul>
+# PHP Ajax Live Search
+<h3>Setup</h3>
+    <ul>
+        <li>Create a database named 'livesearch'</li>
+        <li>Import the 'results.sql' file</li>
+        <li>You can run it on localhost or your remote connection</li>
+    </ul>
 
