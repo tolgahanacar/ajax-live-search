@@ -1,67 +1,35 @@
--- phpMyAdmin SQL Dump
--- version 4.9.1
--- https://www.phpmyadmin.net/
---
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 28 Eki 2020, 18:10:57
--- Sunucu sürümü: 10.4.8-MariaDB
--- PHP Sürümü: 7.3.11
+-- Database initialization script for livesearch
+-- Table: results
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+CREATE DATABASE IF NOT EXISTS `livesearch` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `livesearch`;
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Veritabanı: `livesearch`
---
-
--- --------------------------------------------------------
-
---
--- Tablo için tablo yapısı `results`
---
+DROP TABLE IF EXISTS `results`;
 
 CREATE TABLE `results` (
-  `id` int(11) NOT NULL,
-  `description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Tablo döküm verisi `results`
---
-
-INSERT INTO `results` (`id`, `description`) VALUES
-(1, 'test'),
-(2, 'test234');
-
---
--- Dökümü yapılmış tablolar için indeksler
---
-
---
--- Tablo için indeksler `results`
---
-ALTER TABLE `results`
-  ADD PRIMARY KEY (`id`);
-
---
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
---
-
---
--- Tablo için AUTO_INCREMENT değeri `results`
---
-ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO `results` (`description`) VALUES
+('HTML5 - HyperText Markup Language'),
+('CSS3 - Cascading Style Sheets'),
+('JavaScript - High-level programming language'),
+('PHP - Hypertext Preprocessor'),
+('MySQL - Relational Database Management System'),
+('Python - Multi-purpose programming language'),
+('Java - Object-oriented programming language'),
+('React - JavaScript library for building user interfaces'),
+('Vue.js - Progressive JavaScript framework'),
+('Angular - Platform for building mobile and desktop web applications'),
+('Node.js - JavaScript runtime environment'),
+('Laravel - The PHP Framework for Web Artisans'),
+('Git - Distributed version control system'),
+('GitHub - Hosting service for software development version control'),
+('jQuery - Fast, small, and feature-rich JavaScript library'),
+('Bootstrap - Front-end open source toolkit'),
+('AJAX - Asynchronous JavaScript and XML'),
+('REST API - Representational State Transfer'),
+('JSON - JavaScript Object Notation'),
+('XML - Extensible Markup Language');
