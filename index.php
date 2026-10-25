@@ -1,6 +1,3 @@
-<?php
-require_once 'connect.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +9,11 @@ require_once 'connect.php';
     
     <title>Ajax Live Search</title>
     
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Premium stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -25,16 +27,29 @@ require_once 'connect.php';
         
         <form method="post" action="#" onsubmit="return false;">
             <div class="input-wrapper">
-                <input type="search" name="sea" id="sea" placeholder="Search (e.g. php, javascript, react)..." autocomplete="off" autofocus>
+                <input type="search" name="sea" id="sea" placeholder="Search (e.g. php, javascript, react)..." autocomplete="off" autofocus role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="result">
+                <button type="button" id="clear-search" class="clear-btn" aria-label="Clear search input" title="Clear search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <span class="shortcut-kbd" id="shortcut-hint" title="Press / to focus search"><kbd>/</kbd></span>
             </div>
             <div class="results-wrapper" id="results-wrapper">
-                <div id="result"></div>
+                <div id="result" role="listbox" aria-label="Search Results"></div>
+                <div class="results-footer" id="results-footer">
+                    <span class="results-count" id="results-count">0 results</span>
+                    <span class="keyboard-hints">
+                        <kbd>↑</kbd><kbd>↓</kbd> navigate <kbd>↵</kbd> select <kbd>esc</kbd> close
+                    </span>
+                </div>
             </div>
+            <div id="search-aria-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
         </form>
     </div>
 
-    <!-- Externalized scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Externalized scripts - Updated to jQuery 3.7.1 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="assets/js/search.js"></script>
 </body>
 </html>
